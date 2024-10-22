@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code Tester with Monaco Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+    <script src="https://unpkg.com/emmet-monaco-es/dist/emmet-monaco.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>VS Code editor</h1>
+        <div class="topSec">
+            <div class="topLeft">
+                <button id="htmlButton" class="active">index.html</button>
+                <button id="cssButton">style.css</button>
+                <button id="jsButton">script.js</button>
+            </div>
+            <div class="topMiddle">
+                <button id="themeToggle"><i class="ri-moon-fill"></i></button>
+                <input type="file" id="fileUpload" multiple>
+            </div>
+            <div class="topRight">
+                <button id="reloadButton"><i class="ri-refresh-line"></i></button>
+                <button id="fullscreenButton">Fullscreen<i class="ri-fullscreen-line"></i></button>
+                <div id="iframeDimensions">Dimensions : 0px X 0px</div>
+            </div>
+        </div>
+        <div class="editor-container">
+            <div id="editorSection">
+                <div id="htmlEditor" class="monaco-editor"></div>
+                <div id="cssEditor" class="monaco-editor" style="display: none;"></div>
+                <div id="jsEditor" class="monaco-editor" style="display: none;"></div>
+            </div>
+            <div id="separator"></div>
+            <div id="outputSection">
+                <iframe id="output"></iframe>
+            </div>
+            <div id="ownResizer"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

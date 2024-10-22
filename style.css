@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Source Code Pro", sans-serif;
+    background-color: #f3efff;
+}
+
+:root {
+    --ui-color: #7354d7;
+}
+
+button, input[type=file]::file-selector-button, input {
+    font-size: 14px;
+    font-family: "Source Code Pro", sans-serif;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+main {
+    height: 100vh;
+    padding: 20px;
+    margin-inline: auto;
+
+    h1 {
+        font-size: 40px;
+        line-height: 1;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .topSec {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    
+        #fullscreenButton,
+        #themeToggle,
+        #reloadButton {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 10px;
+            color: #FFF;
+            background: var(--ui-color);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        [class^="ri-"] {
+            font-size: 18px;
+        }
+    
+        .topLeft,
+        .topMiddle,
+        .topRight {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    
+        .topLeft {
+            button {
+                font-size: 14px;
+                padding: 5px 10px;
+                background: #FFF;
+                border: 1px solid var(--ui-color);
+                border-radius: 20px;
+            }
+    
+            .active {
+                color: #FFF;
+                background: var(--ui-color);
+            }
+        }
+    
+        .topMiddle {
+    
+            input[type=file]::file-selector-button {
+                padding: 5px 10px;
+                color: #FFF;
+                background: var(--ui-color);
+                border: none;
+                border-radius: 20px;
+            }
+        }
+    }
+
+    .editor-container {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        height: calc(100vh - 180px);
+
+        #editorSection,
+        #outputSection {
+            width: 50%;
+            box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.5)
+        }
+
+        #editorSection {
+            .monaco-editor {
+                height: 100%;
+            }
+        }
+
+        #separator {
+            width: 15px;
+            background-color: #AAA;
+            cursor: ew-resize;
+        }
+
+        #outputSection {
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background: #FFF;
+            }
+        }
+
+        #ownResizer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
